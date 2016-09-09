@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="routingApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Mini-Routing</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css" media="screen" title="no title">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+    <script src="js/app.js" charset="utf-8"></script>
+    <script src="js/home/homeCtrl.js" charset="utf-8"></script>
+    <script src="js/products/productsCtrl.js" charset="utf-8"></script>
+    <script src="js/products/productsService.js" charset="utf-8"></script>
+    <script src="js/settings/settingsCtrl.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div class="menu">
+        <ul>
+            <li class="main-list">Routing Demo</li>
+            <li class="main-list"><a ui-sref="home">Home</a></li>
+            <li class="main-list" id="products">
+                Products
+                <ul>
+                    <li class="inner-list"><a ui-sref="products({id: 'shoes'})">Shoes</a></li>
+                    <li class="inner-list"><a ui-sref="products({id: 'socks'})">Socks</a></li>
+                </ul>
+            </li>
+            <li class="main-list"><a ui-sref="settings"> Settings </a></li>
+        </ul>
+    </div>
+    <div class="view-container">
+        <div ui-view></div>
+    </div>
+
+  </body>
+</html>
